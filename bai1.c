@@ -11,47 +11,37 @@
 
 #include <stdio.h>
 
+int main() {
+    int n;
+    int i;
 
-float averageDivisibleBy3(int arr[], int size) {
-    int sum = 0;
+    printf("Nhap so phan tu n: ");
+    scanf("%d", &n);
+
+    int mang[n];
+
+    for (i = 0; i < n; i++) {
+        printf("Nhap mang[%d]: ", i);
+        scanf("%d", &mang[i]);
+    }
+
+    float tong = 0;
     int count = 0;
+    float tb;
 
-    for (int i = 0; i < size; i++) {
-        if (arr[i] % 3 == 0) {
-            sum += arr[i];
+    for (i = 0; i < n; i++) {
+        if (mang[i] % 3 == 0) {
+            tong += mang[i];
             count++;
         }
     }
 
-    if (count == 0) {
-        return 0; 
-    }
-
-    return (float)sum / count;
-}
-
-int main() {
-    int n;
-    int arr[100];
-
-    printf("Nhap so luong phan tu cua mang: ");
-    scanf("%d", &n);
-
-    // Nhập mảng
-    for (int i = 0; i < n; i++) {
-        printf("Nhap phan tu thu %d: ", i);
-        scanf("%d", &arr[i]);
-    }
-
-    float avg = averageDivisibleBy3(arr, n);
-
-    if (avg == 0) {
-        printf("Khong co so nao chia het cho 3 trong mang\n");
+    if (count > 0) {
+        tb = tong / count;
+        printf("%.2f", tb);
     } else {
-        printf("Trung binh cong cac so chia het cho 3 la: %.2f\n", avg);
+        printf("0");
     }
 
     return 0;
 }
-
-
