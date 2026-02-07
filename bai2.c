@@ -8,7 +8,6 @@
 //  Input: Nhập vào từ bàn phím 1 mảng các số nguyên. Mảng gồm n phần tử 
 //  Output: Xuất ra màn hình giá trị nhỏ nhất và lớn nhất của mảng
 
-// VIẾT CODE Ở ĐÂY
 #include <stdio.h>
 int main() {
     int n;
